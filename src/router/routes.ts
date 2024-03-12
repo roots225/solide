@@ -1,25 +1,28 @@
 import LoginPage from "@/pages/Login.vue";
 import { AppLayout } from "@/layouts";
 import HomePage from "@/pages/Home.vue";
+import DashboardPage from "@/pages/Dashboard.vue";
 
 export const routes = [
   {
     path: "/",
+    component: HomePage,
+  },
+  {
+    path: "/dashboard",
+    name: "dashboardpage",
     component: AppLayout,
-    redirect: (to: any, from: any, next: any) => {
-      return false
-        ? {
-            name: "login",
-          }
-        : "/home";
+    redirect: "/dashboard/home",
+    meta: {
+      title: "Tableaud de bord",
     },
     children: [
       {
         path: "home",
-        name: "homepage",
-        component: HomePage,
+        name: "dashboardpage",
+        component: DashboardPage,
         meta: {
-          title: "Login",
+          title: "Home",
         },
       },
     ],

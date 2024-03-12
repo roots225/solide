@@ -1,4 +1,9 @@
+<script lang="ts" setup>
+import { Header, Footer } from "@/layouts";
+</script>
+
 <template>
+  <Header :showHomeBanner="true" />
   <section class="partner-container w-100 py-3">
     <div class="container ps-md-5 p-5">
       <div
@@ -269,4 +274,5 @@
       </button>
     </div>
   </div>
+  <Footer />
 </template>

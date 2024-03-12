@@ -5,7 +5,7 @@ import Footer from "./Footer.vue";
 
 <template>
   <div>
-    <Header :showHomeBanner="true" />
+    <Header :showHomeBanner="false" />
     <RouterView />
     <Footer />
   </div>
