@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
-import { createRouter, createWebHistory } from "vue-router/auto";
+import { createRouter, createWebHistory } from "vue-router";
 // import { redirects, routes } from "./additional-routes";
 import { useGuards } from "./guards";
 import { routes } from "./routes";
@@ -12,11 +12,13 @@ const router = createRouter({
 
     return { top: 0 };
   },
-  extendRoutes: (pages: any[]) => [...[...pages, ...routes]],
+  routes: [...routes],
+  // extendRoutes: (pages: any[]) => [...[...pages, ...routes]],
 });
 
 useGuards(router);
 export { router };
+
 export default function (app: App<Element>) {
   app.use(router);
 }
